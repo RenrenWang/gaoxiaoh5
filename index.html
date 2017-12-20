@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="./css/animate.min.css" />
+    <link rel="stylesheet" href="./css/index.css"/>
+    <title>浙江医药大学图书馆阅读足迹</title>
+    <script src="./js/jquery-1.7.2.min.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script src="./js/base64.js"></script>
+    <script src="./js/deploy.js"></script>
+</head>
+<body>
+    <div style="display: block; opacity: 1;" id="audio_btn" class="off video_exist rotate" data-event="11205">
+        <audio loop="" src="./source/bgsound.mp3" id="media" autoplay=""></audio>
+    </div>
+    <div id="slidePageBox" class="slide-box">
+        <section class="slide-page page1"></section>
+        <section class="slide-page page2">
+            <div class="left_top">
+                <svg class="element svg-element" preserveAspectRatio="none" xml:space="preserve" viewBox="0 0 260 260" height="100%" width="100%" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="3776134391" baseProfile="tiny" version="1.2" overflow="visible">
+                    <path style="fill: none;" d="M105.5,2.5c22.3,0,40.4,54.8,40.4,122.5c0,67.7-18.1,122.5-40.4,122.5  c-22.3,0-40.4-54.8-40.4-122.5c0-67.4,17.9-122.1,40.1-122.5" stroke-width="2" stroke="#fff" fill="none" id="motion1"></path>
+                    <path style="fill: none;" d="M205.9,195.3c-12.8,18.3-68.1,1.6-123.5-37.2C26.9,119.3-7.6,73,5.2,54.7  s68.1-1.6,123.5,37.2c55.2,38.7,89.7,84.7,77.3,103.1" stroke-width="2" stroke="#fff" fill="none" id="motion2"></path>
+                    <path style="fill: none;" d="M5.2,195.3C-7.6,177,26.9,130.7,82.3,91.9c55.4-38.8,110.7-55.5,123.5-37.2  s-21.8,64.5-77.2,103.4C73.5,196.7,18.4,213.4,5.3,195.5" stroke-width="2" stroke="#fff" fill="none" id="motion3"></path>
+                        <circle style="fill: rgb(255, 255, 255);" r="4" cy="" cx="" fill="#fff">
+                        <animateMotion repeatCount="indefinite" dur="4s">
+                                    <mpath xlink:href="#motion1"></mpath>
+                         </animateMotion>
+                      </circle>
+                        <circle style="fill: rgb(255, 255, 255);" r="4" cy="" cx="" fill="#fff">
+                        <animateMotion repeatCount="indefinite" dur="4s">
+                            <mpath xlink:href="#motion2"></mpath>
+                         </animateMotion>
+                      </circle>
+                        <circle style="fill: rgb(255, 255, 255);" r="4" cy="" cx="" fill="#fff">
+                        <animateMotion repeatCount="indefinite" dur="4s">
+                            <mpath xlink:href="#motion3"></mpath>
+                         </animateMotion>
+                      </circle>
+                </svg>
+            </div>
+            <div class="right_bottom">
+                <svg class="element svg-element" preserveAspectRatio="none" xml:space="preserve" viewBox="0 0 260 260" height="100%" width="100%" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="3776134391" baseProfile="tiny" version="1.2" overflow="visible">
+                <path style="fill: none;" d="M105.5,2.5c22.3,0,40.4,54.8,40.4,122.5c0,67.7-18.1,122.5-40.4,122.5  c-22.3,0-40.4-54.8-40.4-122.5c0-67.4,17.9-122.1,40.1-122.5" stroke-width="2" stroke="#fff" fill="none" id="motion1"></path>
+                <path style="fill: none;" d="M205.9,195.3c-12.8,18.3-68.1,1.6-123.5-37.2C26.9,119.3-7.6,73,5.2,54.7  s68.1-1.6,123.5,37.2c55.2,38.7,89.7,84.7,77.3,103.1" stroke-width="2" stroke="#fff" fill="none" id="motion2"></path>
+                <path style="fill: none;" d="M5.2,195.3C-7.6,177,26.9,130.7,82.3,91.9c55.4-38.8,110.7-55.5,123.5-37.2  s-21.8,64.5-77.2,103.4C73.5,196.7,18.4,213.4,5.3,195.5" stroke-width="2" stroke="#fff" fill="none" id="motion3"></path>
+                <circle style="fill: rgb(255, 255, 255);" r="4" cy="" cx="" fill="#fff">
+                <animateMotion repeatCount="indefinite" dur="4s">
+                <mpath xlink:href="#motion1"></mpath>
+                         </animateMotion>
+                      </circle>
+                <circle style="fill: rgb(255, 255, 255);" r="4" cy="" cx="" fill="#fff">
+                <animateMotion repeatCount="indefinite" dur="4s">
+                <mpath xlink:href="#motion2"></mpath>
+                         </animateMotion>
+                      </circle>
+                <circle style="fill: rgb(255, 255, 255);" r="4" cy="" cx="" fill="#fff">
+                <animateMotion repeatCount="indefinite" dur="4s">
+                <mpath xlink:href="#motion3"></mpath>
+                         </animateMotion>
+                      </circle>
+                </svg>
+            </div>
+           <div class="center">
+                <p>姓名：<span id="PName">张正</span></p>
+                <p>书证号/一卡通号：<span id="CardNo">010063</span></p>
+                <p>学院/单位：<span id="OrgName">图书馆</span></p>
+                <p>第一次借阅时间：<span id="St_FirstEnterDate">2001年1月9日</span></p>
+                <p>最后一次借阅时间：<span id="St_LastEnterDate">2016年10月10日</span></p>
+            </div>
+        </section>
+        <section class="slide-page page3">
+            <div class="top1">
+                <p class="top_bg"></p>
+                <p class="top_name">我借阅的第一本书</p>
+                <p class="top_tip Title_2"></p>
+            </div>
+            <img src="./images/nobook.png" class="CoverUrl_2" />
+            <div class="top">
+               <p style="color:#009999">
+                    <span style="color:#D04A94;" id="CircDate_2">2001年1月9日</span>
+                    ，你一个人徘徊在书架，寻寻觅觅，拾起又放下，最后你借走了第一本书——《
+                    <span style="color:#D04A94;" class="Title_2">如何提高四、六级听力应试能力</span>
+                    》，我们也就此结缘。
+                </p>
+            </div>
+        </section>
+        <section class="slide-page page4">
+            <div class="top1">
+                <p class="top_bg"></p>
+                <p class="top_name">我借阅的最后一本书</p>
+                <p class="top_tip  Title_3"></p>
+            </div>
+            <img src="./images/nobook.png" class="CoverUrl_3" />
+            <div class="bottom">
+               <p style="color:white;">
+                    
+                    跟随时间的脚印，我们寻到了你最后一次来这儿的足迹，
+                    <span style="color:#D04A94;" id="CircDate_3">2016年10月10日</span>
+                    你带走了
+                    <span style="color:#D04A94;" id="PublishC_3">中国中医药出版社</span>
+                    的《
+                    <span style="color:#D04A94;" class="Title_3">针刀医学基础理论</span>
+                    》，无论何时我都是你荡涤心灵的港湾。
+                </p>
+            </div>
+        </section>
+        <section class="slide-page page5">
+            <div class="top">
+                <p class="top_bg"></p>
+                <p class="top_name">借阅总量</p>
+                <p class="top_tip">我一共借书<span class="font_animate St_LoanTotal">54</span>本</p>
+            </div>
+            <div class="bottom">
+                <div class="time_line">
+                    <i class="point"></i>
+                    <i class="point"></i>
+                    <i class="point"></i>
+                    <i class="point"></i>
+                    <i class="point"></i>
+                    <i class="point"></i>
+                </div>
+               <div class="time" id="list7">
+
+                <div class="item"><p>2016-10-10</p><p></p><p>针刀医学基础理论</p><p></p></div><div class="item"><p>2016-10-08</p><p></p><p>中国梅花针</p><p></p></div><div class="item"><p>2016-07-18</p><p></p><p>一个男孩的宇宙</p><p></p></div><div class="item"><p>2016-07-14</p><p></p><p>傅雷家书</p><p></p></div><div class="item"><p>2016-07-11</p><p></p><p>中国梅花针</p><p></p></div><div class="item"><p>2016-07-11</p><p></p><p>中国梅花针</p><p></p></div></div>
+            </div>
+        </section>
+        <section class="slide-page page7">
+            <div class="top1">
+                <p>我的借阅爱好</p>
+            </div>
+            <div class="center">
+              <ul class="circle_item" id="list8"><li><a class="item" style="background:#EC87C1"><span>医药、卫生<br>46.30%</span></a></li><li><a class="item" style="background:#F6BB43"><span>文学<br>29.63%</span></a></li><li><a class="item" style="background:#A0D468"><span>历史、地理<br>11.11%</span></a></li></ul>
+            </div>
+            <div class="bottom">
+                <p class="title" style="text-align:left;">
+                    爱好相同的朋友：
+                </p>
+              <ul class="item_ul" id="list9"><li>全世建</li><li>洪春姿</li><li>黄建华</li><li>魏小勇</li><li>林奕堂</li><li>张全明</li><li>黎玉辉</li><li>詹伟成</li><li>王荣国</li><li>薛军</li></ul>
+            </div>
+        </section>
+        <section class="slide-page page6">
+            <div class="top">
+<p class="top_title" style="color:#663300;">进进出出的人群中你的身影总是那么清晰，翻阅你的足迹我们发现与你相处的这<font color="red" id="St_TotalDays">5753</font>天你曾经借阅了<font color="red" class="St_LoanTotal">54</font>本书籍，全校历史排名<font color="red" id="St_Xx_LoanRank">23901</font>，超过了<font color="red" id="St_Xx_Ratio">66.91%</font>的读者。没有看到你的这段时间，我们很想念，期待你能常回家看看。</p>            </div>
+        </section>
+        <!-- <section class="slide-page page9">
+            <p style="font-family: '楷体','微软雅黑',Arial;font-size:1rem;margin-top:50%;text-align:left;margin-left:1.4rem;margin-right:1.4rem;">
+                <span style="color:red;" class="pName"></span>同学：<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;你在2016广州中医药大学第十二届校园读书节中，被评为“最牛读者”。特发奖状，以此鼓励
+            </p>
+        </section> -->
+        <section class="slide-page page8" style="text-align:center;">
+            <a class="btn" id="show_all_hist" style="margin-top:1rem;">查看所有借阅历史</a>
+        </section>
+        <section class="slide-page page10" style="text-align:center;">
+            <img src="./images/code.jpg" style="width:50%;margin-top:2rem;"/>
+            <br/>
+            <p>【参与方式】</p>
+            <p>微信版：扫描上方二维码，关注浙江中医药大学图书馆官方微信，选择菜单“我的空间——阅读足迹”</p>
+            <p>网页版：登录图书馆主页，在“读者互动”模块点击“阅读足迹”可进入浙江中医药大学阅读足迹</p>
+            <p>如有问题请联系：86613700 </p>
+            <a class="share-btn" style="display:none;">分享我的阅读足迹</a>
+        </section>
+    </div>
+    <div id="share" onclick="closeDialog()">
+        <div class="shareImg"></div>
+    </div>
+    <section id="arrow"><img src="./images/arrow.png"></section>
+    <script type="text/javascript" src="./js/slidePage.js"></script>
+    <script type="text/javascript">
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+              resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+              recalc = function () {
+                  var clientWidth = docEl.clientWidth;
+                  if (!clientWidth) return;
+                  docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+              };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        function getSearchParamObj() {
+
+            var iSearch = decodeURIComponent(window.location.search.substring(1));
+
+            var iRegx = /([\d\w\_\$]+)=([^=^&]+)/g
+            var iObj = {};
+
+            while (r = (iRegx.exec(iSearch))) {
+                iObj[r[1]] = r[2];
+            }
+            return iObj;
+        }
+        var iSearchObj = getSearchParamObj();
+        
+        var mCardNo = iSearchObj["a"] || "";
+        var mPatronRd = iSearchObj["b"] || "";
+        var mTrackLib = iSearchObj["c"] || "";
+        var mPName = iSearchObj["d"] || "";
+        var mPageNo = iSearchObj["e"] || 0;
+
+        $("#share").click(function () {
+            $(this).hide();
+        });
+        $(".share-btn").click(function () {
+            $("#share").show();
+        })
+        //use slidePage
+        var arrow = document.getElementById('arrow'),
+            slide = new slidePage({
+                el: '#slidePageBox',
+                // locked: true,
+                index: mPageNo,
+                navShow: true,
+                // auto: true,
+                // delay: 8000,
+                effect: 'scale',
+                duration: 400,
+                // minScale: 0.8,
+                end: function () {
+                    if (slide.index == slide.length - 1) {
+                        arrow.style.display = 'none';
+                    } else {
+                        arrow.style.display = 'block';
+                    }
+                }
+            });
+        
+        
+        function isWeiXin() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
+        if (isWeiXin()) {
+            $(".share-btn").show();
+        }
+
+        var mBase64 = new Base64();
+        $("#show_all_hist").attr("href", "hist.html?a=" + mCardNo + "&b=" + mPatronRd + "&c=" + mTrackLib + "&d=" + mPName + "&e=" + 9);
+        $(document).ready(function () {
+            $.getJSON(mIfl+"/Track/track_ifc_Byj_GetList.ashx?a=[Lib={{" + mTrackLib + "}}][PatronRd={{" + mPatronRd + "}}][Type={{lv1}}][Model={{001w}}]&y=11&x=?&_=1474552303359",
+                function (json) {
+                    if (json["error"] != 0) {
+                      //  alert(json["errorname"]);
+                        return;
+                    }
+                    
+                    var iList1 = json["track_ifc_Byj_GetList_list1"];
+                    var iObj1 = iList1[0];
+
+                    //page2
+                    var $CurrentPage = $(".page2");
+                    var iPName = mBase64.decode(iObj1["PName"]);
+                    var iCardNo = mBase64.decode(iObj1["CardNo"]);
+                    var iSexName = mBase64.decode(iObj1["SexName"]);
+                    var iOrgName = mBase64.decode(iObj1["OrgName"]);
+                    var iSt_FirstEnterDate = mBase64.decode(iObj1["St_FirstEnterDate"]);
+                    var iSt_LastEnterDate = mBase64.decode(iObj1["St_LastEnterDate"]);
+                    $("#PName", $CurrentPage).text(iPName);
+                    $("#CardNo", $CurrentPage).text(iCardNo);
+                    $("#SexName", $CurrentPage).text(iSexName);
+                    $("#OrgName", $CurrentPage).text(iOrgName);
+                    $("#St_FirstEnterDate", $CurrentPage).text(iSt_FirstEnterDate);
+                    $("#St_LastEnterDate", $CurrentPage).text(iSt_LastEnterDate);
+
+                    //page3
+                    $CurrentPage = $(".page3");
+                    //02
+                    var iObj = json["track_ifc_Byj_GetList_list2"][0];
+                    var iCtrlNo = mBase64.decode(iObj["CtrlNo"]);
+                    var iIsbn = mBase64.decode(iObj["Isbn"]);
+                    var iTitle = mBase64.decode(iObj["Title"]);
+                    var iAuthor = mBase64.decode(iObj["Author"]);
+                    var iPublishC = mBase64.decode(iObj["PublishC"]);
+                    var iCircDate = mBase64.decode(iObj["CircDate"]);
+                    var iCoverUrl = mBase64.decode(iObj["CoverUrl"]);
+                    $(".Title_2", $CurrentPage).text(iTitle);
+                    $("#CtrlNo_2", $CurrentPage).text(iCtrlNo);
+                    $("#Isbn_2", $CurrentPage).text(iIsbn);
+                    $("#Author_2", $CurrentPage).text(iAuthor);
+                    $("#PublishC_2", $CurrentPage).text(iPublishC);
+                    $("#CircDate_2", $CurrentPage).text(iCircDate);
+                    $(".CoverUrl_2", $CurrentPage).attr("src", iCoverUrl || "../image/nobook.png");
+
+                    
+                    $CurrentPage = $(".page4");
+                    var iObj = json["track_ifc_Byj_GetList_list3"][0];
+                    var iTitle = mBase64.decode(iObj["Title"]);
+                    var iCtrlNo = mBase64.decode(iObj["CtrlNo"]);
+                    var iIsbn = mBase64.decode(iObj["Isbn"]);
+                    var iAuthor = mBase64.decode(iObj["Author"]);
+                    var iPublishC = mBase64.decode(iObj["PublishC"]);
+                    var iCircDate = mBase64.decode(iObj["CircDate"]);
+                    var iCoverUrl = mBase64.decode(iObj["CoverUrl"]);
+                    $(".Title_3", $CurrentPage).text(iTitle);
+                    $("#CtrlNo_3", $CurrentPage).text(iCtrlNo);
+                    $("#Isbn_3", $CurrentPage).text(iIsbn);
+                    $("#Author_3", $CurrentPage).text(iAuthor);
+                    $("#PublishC_3", $CurrentPage).text(iPublishC);
+                    $("#CircDate_3", $CurrentPage).text(iCircDate);
+                    $(".CoverUrl_3", $CurrentPage).attr("src", iCoverUrl || "../image/nobook.png");
+                    
+                    
+                    //page5
+                    $CurrentPage = $(".page5");
+                    var iList = json["track_ifc_Byj_GetList_list4"];
+                    for (var i = 0; i < iList.length; i++) {
+                        var iCircDate = mBase64.decode(iList[i]["CircDate"]);
+                        var iTitle = mBase64.decode(iList[i]["Title"]);
+                        var $con = $("<div class='item'>");
+                        var $CircDate = $("<p>" + iCircDate + "<p>");
+                        var $Title = $("<p>" + iTitle + "<p>");
+                        $con.append($CircDate);
+                        $con.append($Title);
+                        $("#list7", $CurrentPage).append($con);
+                    }
+
+                    //page6
+                    var iObj = json["track_ifc_Byj_GetList_list7"][0];
+                    var iSt_TotalDays = mBase64.decode(iObj["St_TotalDays"]);
+                    var iSt_LoanTotal = mBase64.decode(iObj["St_LoanTotal"]);
+                    var iSt_Xx_LoanRank = mBase64.decode(iObj["St_Xx_LoanRank"]);
+                    var iSt_Xx_PatronCnt = mBase64.decode(iObj["St_Xx_PatronCnt"]);
+                    var iSt_Xx_Ratio = mBase64.decode(iObj["St_Xx_Ratio"]);
+
+                    $("#St_TotalDays").text(iSt_TotalDays);
+                    $(".St_LoanTotal").text(iSt_LoanTotal);
+                    $("#St_Xx_LoanRank").text(iSt_Xx_LoanRank);
+                    $("#St_Xx_PatronCnt").text(iSt_Xx_PatronCnt);
+                    $("#St_Xx_Ratio").text(iSt_Xx_Ratio + "%");
+                    if (iSt_Xx_Ratio < 50) {
+                        $(".page9").hide();
+                    }
+
+
+                    //page7
+                    $CurrentPage = $(".page7");
+                    var iBgColorArr = ["#EC87C1", "#F6BB43", "#A0D468"];
+                    var iList8 = json["track_ifc_Byj_GetList_list8"];
+                    for (var i = 0; i < iList8.length & i< 3; i++) {
+                        var iCallnoCatName = mBase64.decode(iList8[i]["CallnoCatName"]);
+                        var iRatio = mBase64.decode(iList8[i]["Ratio"]);
+                        var $li = $("<li>");
+                        var $a = $("<a class='item' style='background:" + iBgColorArr[i] + "'>");
+                        var $span = $("<span>" + iCallnoCatName + "<br/>" + iRatio + "%</span>");
+                        $a.append($span);
+                        $li.append($a);
+                        $("#list8", $CurrentPage).append($li);
+                    }
+                    var iList9 = json["track_ifc_Byj_GetList_list6"];
+                    for (var i = 0; i < iList9.length; i++) {
+                        var iPName = mBase64.decode(iList9[i]["PName"]);
+                        var $li = $("<li>");
+                        $li.text(iPName);
+                        $("#list9", $CurrentPage).append($li);
+                    }
+
+                    //奖状页
+                    $(".pName").text(mBase64.decode(mPName));
+                })
+        })
+    </script>
+</body>
+</html>

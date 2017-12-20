@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>浙江中医药大学图书馆阅读足迹</title>
+    <link rel="stylesheet" href="./css/animate.min.css" />
+    <link rel="stylesheet" href="./css/login2.css" />
+    <script src="./js/jquery-1.7.2.min.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script src="./js/base64.js"></script>
+    <script src="./js/deploy.js"></script>
+</head>
+<body>
+    <div class="main_con">
+        <img src="./images/bg_1_bottom.png" class="bottom_img" />
+        <div class="inner_con">
+            <div class="title">
+                <p style="font-size: 0.8rem;">浙江中医大学阅读足迹</p>
+            </div>
+            <div class="user_img">
+                <img src="./images/gzy_logo.png" />
+            </div>
+            <div class="login_con">
+                <form class="form" id="form1">
+                    <input class="input" type="text" id="cardno" value="U13031163" placeholder="请输入借书证" />
+                    <div class="line"></div>
+                    <input class="input" type="text" id="pname" value="严倩倩" placeholder="请输入姓名" />
+                    <button class="submit_btn" type="submit">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+                </form>
+                <p style="margin:1rem;overflow:hidden;">
+                    <a style="float:right;color:white;font-size:1rem;" href="info.html">忘记卡号？</a>
+                </p>
+            </div>
+            <div style="margin-top:1rem;text-align: center;width: 100%;color: white;">
+                统计数据来源于：采集自99年后入学师生图书借阅记录
+            </div>
+        </div>
+        
+    </div>
+    <div class="progress_bar" >
+
+    </div>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+              resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+              recalc = function () {
+                  var clientWidth = docEl.clientWidth;
+                  if (!clientWidth) return;
+                  docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+              };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+        var mWindowHeight = $(window).height();
+        $(".main_con").css({
+            height:mWindowHeight+"px"
+        })
+        var mBase64 = new Base64();
+        var mLib = "gzhtcm";
+
+        function getSearchParamObj() {
+
+            var iSearch = decodeURIComponent(window.location.search.substring(1));
+            
+            var iRegx = /([\d\w\_\$]+)=([^=^&]+)/g
+            var iObj = {};
+
+            while (r = (iRegx.exec(iSearch))) {
+                iObj[r[1]] = r[2];
+            }
+            return iObj;
+        }
+        var iSearchObj = getSearchParamObj();
+
+        $("#cardno").val(iSearchObj["a"] || "");
+        $("#pname").val(iSearchObj["b"] || "");
+
+        var mBase64 = new Base64();
+
+        $("#form1").submit(function () {
+            var iCardno = $("#cardno").val();
+            var iPName = $("#pname").val();
+            $.getJSON(mIfl+"/Track/track_ifc_Byj_Login.ashx?a=" + encodeURIComponent("[PName={{" + iPName + "}}][CardNo={{" + iCardno + "}}][LoginType={{}}][Lib={{" + mLib + "}}]") + "&y=11&x=?",
+            function (json) {
+                if (json["error"] != 0) {
+                    alert(json["errorname"]);
+                    return false;
+                }
+                var iPatronRd = json["PatronRd"];
+                $.cookie('PatronRd', iPatronRd, { path: '/' });
+                $.cookie('TrackLib', mLib, { path: '/' });
+                $.cookie('PName', iPName, { path: '/' });
+                $.cookie('Cardno', iCardno, { path: '/' });
+                location.href = "index.html?a=" + iCardno + "&b=" + iPatronRd + "&c=" + mLib + "&d=" + mBase64.encode(iPName);
+            })
+            return false;
+        })
+    </script>
+</body>
+</html>
